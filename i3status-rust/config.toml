@@ -1,0 +1,37 @@
+[theme]
+name = "slick"
+[theme.overrides]
+#フォントサイズを変えないと死ぬ
+separator = "<span font='17'></span>"
+
+[icons]
+name = "awesome5"
+
+[[block]]
+block = "networkmanager"
+interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
+interface_name_include = []
+ap_format = "{ssid^10}"
+
+[[block]]
+block = "backlight"
+minimum = 0
+maximum = 100
+cycle = [100, 80, 50, 20, 0]
+
+[[block]]
+block = "sound"
+format = "{volume}"
+step_width = 3
+
+[[block]]
+block = "battery"
+interval = 10
+driver = "sysfs"
+full_format = "{percentage} {time}"
+format = "{percentage} {time}"
+
+[[block]]
+block = "time"
+interval = 1
+format = "%m/%d %a %T"
